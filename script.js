@@ -6,6 +6,14 @@ let mesa = document.querySelector('.mesa');
 
 let jogo = [];
 
+let temSelecionado;
+
+let temComparar = false;
+
+let primeiraCarta,segundaCarta;
+
+let contador = 0;
+
 let cartas = [
     {nome: "bobrossparrot",
     img: "imagens/bobrossparrot.gif"
@@ -90,15 +98,56 @@ function preparaJogo (){
     for (let i = 0; i < quantidadeCartas; i++){
         mesa.innerHTML += `
         <div class="cartas">
-            <img class="frente" src="${jogo[i].img}" onclick="mostraCarta(this)" />
-            <img class="verso" src="imagens/front.png" onclick="mostraCarta(this)" />
+            <img class="frente" src="${jogo[i].img}" />
+            <img class="verso" src="imagens/front.png" onclick="mostraCarta(this)"  id="${jogo[i].nome}" />
         </div>`;
     }
 }
 
 preparaJogo ();
 
+function desvira (){
+    primeiraCarta.parentNode.classList.remove('revelada');
+    segundaCarta.parentNode.classList.remove('revelada');
+}
+
+function vitoria () {
+    alert(`Parabeeens!! voce ganhou em ${contador} tentativas`);
+}
+
 
 function mostraCarta (elemento){
- elemento.parentNode.classList.toggle('revelada');
+
+    elemento.parentNode.classList.add('revelada');
+
+    if(temComparar == false){
+        temComparar = true;
+        primeiraCarta = elemento
+
+    } else{
+        temComparar = false;
+        segundaCarta = elemento;
+        contador++
+
+        
+
+        if(primeiraCarta.id !== segundaCarta.id){
+            console.log('e diferente');
+            console.log(primeiraCarta,segundaCarta)
+
+            setTimeout(desvira, 1000)
+
+
+
+        }else{
+            console.log('e igual');
+        }
+    }
+
+
+    if (document.querySelectorAll('.revelada').length == quantidadeCartas){
+        setTimeout(vitoria,500);
+    }
+
+
 }
