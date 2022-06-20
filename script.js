@@ -112,7 +112,7 @@ function desvira (){
 }
 
 function vitoria () {
-    alert(`Parabeeens!! voce ganhou em ${contador} tentativas`);
+    alert(`Você ganhou em ${contador} jogadas!`);
 }
 
 

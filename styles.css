@@ -57,3 +57,13 @@ body {
 .revelada {
     transform: rotateY(180deg);
 }
+
+@media(max-width: 614px){
+
+    .titulo{
+        font-size: 36px;
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+}
