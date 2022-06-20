@@ -1,3 +1,43 @@
+body {
+    background-color: #EEF9BF;
+}
+
+
 .titulo {
-    
+    font-family: 'Roboto', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    color: #75B79E;
+    display: flex;
+
+
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.cartas {
+    box-sizing: border-box;
+    width: 117px;
+    height: 146px;
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    margin: 34px;
+}
+
+ul {
+    width: 500px;
+    height: 500px;
+    background-color: azure;
 }
