@@ -88,8 +88,17 @@ function preparaJogo (){
     jogo.sort(comparador);
 
     for (let i = 0; i < quantidadeCartas; i++){
-        mesa.innerHTML += `<div><img src="${jogo[i].img}" class="cartas" /></div>`;
+        mesa.innerHTML += `
+        <div class="cartas">
+            <img class="frente" src="${jogo[i].img}" onclick="mostraCarta(this)" />
+            <img class="verso" src="imagens/front.png" onclick="mostraCarta(this)" />
+        </div>`;
     }
 }
 
 preparaJogo ();
+
+
+function mostraCarta (elemento){
+ elemento.parentNode.classList.toggle('revelada');
+}
